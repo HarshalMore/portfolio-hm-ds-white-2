@@ -1,295 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Muir | Skills</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .gradient-border {
-            border: 2px solid transparent;
-            background: linear-gradient(white, white) padding-box,
-                        linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899) border-box;
-        }
-        .hover-grow {
-            transition: transform 0.3s ease;
-        }
-        .hover-grow:hover {
-            transform: scale(1.03);
-        }
-        .skill-category {
-            background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Muir | Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    #hero {
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-pill {
+      transition: all 0.2s ease;
+    }
+    .skill-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .skill-category:hover .skill-icon {
+      transform: rotate(15deg) scale(1.1);
+    }
+    .skill-icon {
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
-<body class="bg-white font-sans">
-    <div id="vanta-bg" class="fixed inset-0 -z-10 opacity-10"></div>
+<body class="bg-white text-gray-900 font-sans">
+  <div id="vanta-bg" class="fixed inset-0 -z-10 opacity-10"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white bg-opacity-90 backdrop-blur-sm z-50 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-2xl font-bold gradient-text">JM</a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="index.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-900">Home</a>
+            <a href="experience.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-900">Experience</a>
+            <a href="education.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-900">Education</a>
+            <a href="skills.html" class="nav-link px-3 py-2 text-sm font-medium text-blue-600">Skills</a>
+            <a href="contact.html" class="nav-link px-3 py-2 text-sm font-medium text-gray-900">Contact</a>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="p-2 rounded-md focus:outline-none">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
     
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="text-xl font-bold gradient-text">JM</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="experience.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Experience</a>
-                    <a href="education.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Education</a>
-                    <a href="skills.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Skills</a>
-                    <a href="contact.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-900">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
-                <a href="experience.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Experience</a>
-                <a href="education.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Education</a>
-                <a href="skills.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Skills</a>
-                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Home</a>
+        <a href="experience.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Experience</a>
+        <a href="education.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Education</a>
+        <a href="skills.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600">Skills</a>
+        <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Technical Skills</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive expertise in cloud security, identity management, and IT infrastructure optimization.
-            </p>
-        </div>
+  <!-- Hero Section -->
+  <section id="hero" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text">Technical Skills</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          My comprehensive technical toolkit that powers innovative IT solutions and security frameworks.
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <div class="space-y-12">
-            <div data-aos="fade-up">
-                <div class="skill-category p-4 rounded-lg mb-6">
-                    <h2 class="text-2xl font-bold gradient-text">Cloud & Virtualization</h2>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                            <i data-feather="cloud" class="text-blue-600 w-4 h-4"></i>
-                        </div>
-                        <span>VMware</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                            <i data-feather="cloud" class="text-blue-600 w-4 h-4"></i>
-                        </div>
-                        <span>AWS</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                            <i data-feather="cloud" class="text-blue-600 w-4 h-4"></i>
-                        </div>
-                        <span>Splunk</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-                            <i data-feather="cloud" class="text-blue-600 w-4 h-4"></i>
-                        </div>
-                        <span>Terraform</span>
-                    </div>
-                </div>
+  <!-- Skills Section -->
+  <section class="pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Cloud & Virtualization -->
+        <div data-aos="fade-up" class="skill-category bg-white p-6 rounded-xl shadow-md border border-gray-200">
+          <div class="flex items-center mb-6">
+            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+              <i data-feather="cloud" class="skill-icon w-6 h-6 text-blue-600"></i>
             </div>
-
-            <div data-aos="fade-up">
-                <div class="skill-category p-4 rounded-lg mb-6">
-                    <h2 class="text-2xl font-bold gradient-text">IAM & Security</h2>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
-                        </div>
-                        <span>Okta IAM</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
-                        </div>
-                        <span>SSO</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
-                        </div>
-                        <span>MFA</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
-                        </div>
-                        <span>RBAC</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
-                        </div>
-                        <span>SCIM</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
-                        </div>
-                        <span>SAML</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
-                        </div>
-                        <span>OAuth</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
-                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
-                        </div>
-                        <span>AWS IAM</span>
-                    </div>
-                </div>
-            </div>
-
-            <div data-aos="fade-up">
-                <div class="skill-category p-4 rounded-lg mb-6">
-                    <h2 class="text-2xl font-bold gradient-text">Programming & Scripting</h2>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
-                        </div>
-                        <span>Python</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
-                        </div>
-                        <span>SQL</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
-                        </div>
-                        <span>XML</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
-                        </div>
-                        <span>Batch file</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
-                        </div>
-                        <span>Shell Scripting</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
-                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
-                        </div>
-                        <span>PowerShell CLI</span>
-                    </div>
-                </div>
-            </div>
-
-            <div data-aos="fade-up">
-                <div class="skill-category p-4 rounded-lg mb-6">
-                    <h2 class="text-2xl font-bold gradient-text">Tools & Platforms</h2>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
-                        </div>
-                        <span>ServiceNow</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
-                        </div>
-                        <span>Salesforce</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
-                        </div>
-                        <span>Zoho CRM</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
-                        </div>
-                        <span>OpenStack</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
-                        </div>
-                        <span>Blackboard</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
-                        </div>
-                        <span>Zendesk</span>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
-                        </div>
-                        <span>Freshservice</span>
-                    </div>
-                </div>
-            </div>
+            <h2 class="text-xl font-semibold">Cloud & Virtualization</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-pill bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm">VMware</span>
+            <span class="skill-pill bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm">AWS</span>
+            <span class="skill-pill bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm">Splunk</span>
+            <span class="skill-pill bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm">Terraform</span>
+            <span class="skill-pill bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm">OpenStack</span>
+          </div>
         </div>
 
-        <section class="mt-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-8 gradient-text">Key Strengths</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md hover-grow">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-6">
-                            <i data-feather="zap" class="text-blue-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">IAM & Cloud Security Optimization</h3>
-                    </div>
-                    <p class="text-gray-600">Expertise in designing and implementing secure identity and access management frameworks across cloud and enterprise environments.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover-grow">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-6">
-                            <i data-feather="refresh-cw" class="text-purple-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">Identity Lifecycle Automation</h3>
-                    </div>
-                    <p class="text-gray-600">Proven ability to automate user provisioning, deprovisioning, and access management processes, significantly reducing manual effort.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover-grow">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mr-6">
-                            <i data-feather="settings" class="text-pink-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">IT Infrastructure & Process Automation</h3>
-                    </div>
-                    <p class="text-gray-600">Skilled in optimizing IT infrastructure and automating repetitive processes to enhance operational efficiency.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover-grow">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h
+        <!-- IAM & Security -->
+        <div data-aos="fade-up" data-aos-delay="100" class="skill-category bg-white p-6 rounded-xl shadow-md border border-gray-200">
+          <div class="flex items-center mb-6">
+            <div class="bg-purple-100 p-3 rounded-lg mr-4">
+              <i data-feather="shield" class="skill-icon w-6 h-6 text-purple-600"></i>
+            </div>
+            <h2 class="text-xl font-semibold">IAM & Security</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-pill bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm">Okta</span>
+            <span class="skill-pill bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm">Azure AD</span>
+            <span class="skill-pill bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm">CyberArk</span>
+            <span class="skill-pill bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm">MFA</span>
+          </div>
+        </div>
+
+        <!-- Networking -->
+        <div data-aos="fade-up" data-aos-delay="200" class="skill-category bg-white p-6 rounded-xl shadow-md border border-gray-200">
+          <div class="flex items-center mb-6">
+            <div class="bg-green-100 p-3 rounded-lg mr-4">
+              <i data-feather="wifi" class="skill-icon w-6 h-6 text-green-600"></i>
+            </div>
+            <h2 class="text-xl font-semibold">Networking</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-pill bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm">TCP/IP</span>
+            <span class="skill-pill bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm">DNS</span>
+            <span class="skill-pill bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm">VPN</span>
+            <span class="skill-pill bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm">Firewalls</span>
+          </div>
+        </div>
+
+        <!-- Scripting & Automation -->
+        <div data-aos="fade-up" data-aos-delay="300" class="skill-category bg-white p-6 rounded-xl shadow-md border border-gray-200">
+          <div class="flex items-center mb-6">
+            <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+              <i data-feather="code" class="skill-icon w-6 h-6 text-yellow-600"></i>
+            </div>
+            <h2 class="text-xl font-semibold">Scripting & Automation</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-pill bg-yellow-100 text-yellow-600 px-4 py-2 rounded-full text-sm">Python</span>
+            <span class="skill-pill bg-yellow-100 text-yellow-600 px-4 py-2 rounded-full text-sm">Bash</span>
+            <span class="skill-pill bg-yellow-100 text-yellow-600 px-4 py-2 rounded-full text-sm">PowerShell</span>
+            <span class="skill-pill bg-yellow-100 text-yellow-600 px-4 py-2 rounded-full text-sm">Ansible</span>
+          </div>
+        </div>
+
+        <!-- Monitoring & Tools -->
+        <div data-aos="fade-up" data-aos-delay="400" class="skill-category bg-white p-6 rounded-xl shadow-md border border-gray-200">
+          <div class="flex items-center mb-6">
+            <div class="bg-red-100 p-3 rounded-lg mr-4">
+              <i data-feather="activity" class="skill-icon w-6 h-6 text-red-600"></i>
+            </div>
+            <h2 class="text-xl font-semibold">Monitoring & Tools</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-pill bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm">Nagios</span>
+            <span class="skill-pill bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm">Zabbix</span>
+            <span class="skill-pill bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm">Prometheus</span>
+            <span class="skill-pill bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm">Grafana</span>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div data-aos="fade-up" data-aos-delay="500" class="skill-category bg-white p-6 rounded-xl shadow-md border border-gray-200">
+          <div class="flex items-center mb-6">
+            <div class="bg-pink-100 p-3 rounded-lg mr-4">
+              <i data-feather="database" class="skill-icon w-6 h-6 text-pink-600"></i>
+            </div>
+            <h2 class="text-xl font-semibold">Databases</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-pill bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm">MySQL</span>
+            <span class="skill-pill bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm">PostgreSQL</span>
+            <span class="skill-pill bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm">MongoDB</span>
+            <span class="skill-pill bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm">Redis</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script>
+    VANTA.GLOBE({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x3b82f6,
+      backgroundColor: 0xffffff,
+      size: 0.8
+    });
+
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    feather.replace();
+  </script>
 </body>
 </html>
