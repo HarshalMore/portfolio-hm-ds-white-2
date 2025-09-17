@@ -21,6 +21,8 @@
     }
     .gradient-text2 {
       background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      background-clip: text; /* for non-webkit browsers */
+      color: transparent;     /* fallback */
     }
     .nav-link {
       position: relative;
