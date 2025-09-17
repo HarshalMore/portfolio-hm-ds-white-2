@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Muir | Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-border {
+            border: 2px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899) border-box;
+        }
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        .hover-grow:hover {
+            transform: scale(1.03);
+        }
+        .skill-category {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+    <div id="vanta-bg" class="fixed inset-0 -z-10 opacity-10"></div>
+    
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold gradient-text">JM</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="experience.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Experience</a>
+                    <a href="education.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Education</a>
+                    <a href="skills.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Skills</a>
+                    <a href="contact.html" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-900">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Home</a>
+                <a href="experience.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Experience</a>
+                <a href="education.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Education</a>
+                <a href="skills.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Skills</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Technical Skills</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive expertise in cloud security, identity management, and IT infrastructure optimization.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <div data-aos="fade-up">
+                <div class="skill-category p-4 rounded-lg mb-6">
+                    <h2 class="text-2xl font-bold gradient-text">Cloud & Virtualization</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i data-feather="cloud" class="text-blue-600 w-4 h-4"></i>
+                        </div>
+                        <span>VMware</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i data-feather="cloud" class="text-blue-600 w-4 h-4"></i>
+                        </div>
+                        <span>AWS</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i data-feather="cloud" class="text-blue-600 w-4 h-4"></i>
+                        </div>
+                        <span>Splunk</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i data-feather="cloud" class="text-blue-600 w-4 h-4"></i>
+                        </div>
+                        <span>Terraform</span>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <div class="skill-category p-4 rounded-lg mb-6">
+                    <h2 class="text-2xl font-bold gradient-text">IAM & Security</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
+                        </div>
+                        <span>Okta IAM</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
+                        </div>
+                        <span>SSO</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
+                        </div>
+                        <span>MFA</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
+                        </div>
+                        <span>RBAC</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
+                        </div>
+                        <span>SCIM</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
+                        </div>
+                        <span>SAML</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
+                        </div>
+                        <span>OAuth</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <i data-feather="shield" class="text-purple-600 w-4 h-4"></i>
+                        </div>
+                        <span>AWS IAM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <div class="skill-category p-4 rounded-lg mb-6">
+                    <h2 class="text-2xl font-bold gradient-text">Programming & Scripting</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
+                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
+                        </div>
+                        <span>Python</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
+                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
+                        </div>
+                        <span>SQL</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
+                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
+                        </div>
+                        <span>XML</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
+                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
+                        </div>
+                        <span>Batch file</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
+                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
+                        </div>
+                        <span>Shell Scripting</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center mr-3">
+                            <i data-feather="code" class="text-pink-600 w-4 h-4"></i>
+                        </div>
+                        <span>PowerShell CLI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <div class="skill-category p-4 rounded-lg mb-6">
+                    <h2 class="text-2xl font-bold gradient-text">Tools & Platforms</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
+                        </div>
+                        <span>ServiceNow</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
+                        </div>
+                        <span>Salesforce</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
+                        </div>
+                        <span>Zoho CRM</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
+                        </div>
+                        <span>OpenStack</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
+                        </div>
+                        <span>Blackboard</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
+                        </div>
+                        <span>Zendesk</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i data-feather="tool" class="text-green-600 w-4 h-4"></i>
+                        </div>
+                        <span>Freshservice</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="mt-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-8 gradient-text">Key Strengths</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover-grow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-6">
+                            <i data-feather="zap" class="text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">IAM & Cloud Security Optimization</h3>
+                    </div>
+                    <p class="text-gray-600">Expertise in designing and implementing secure identity and access management frameworks across cloud and enterprise environments.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover-grow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-6">
+                            <i data-feather="refresh-cw" class="text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Identity Lifecycle Automation</h3>
+                    </div>
+                    <p class="text-gray-600">Proven ability to automate user provisioning, deprovisioning, and access management processes, significantly reducing manual effort.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover-grow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mr-6">
+                            <i data-feather="settings" class="text-pink-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">IT Infrastructure & Process Automation</h3>
+                    </div>
+                    <p class="text-gray-600">Skilled in optimizing IT infrastructure and automating repetitive processes to enhance operational efficiency.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover-grow">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h
+</body>
+</html>
