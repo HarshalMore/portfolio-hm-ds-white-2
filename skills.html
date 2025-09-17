@@ -47,12 +47,22 @@
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
                   0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
-    .skill-category:hover .skill-icon {
+    /*.skill-category:hover .skill-icon {
       transform: rotate(15deg) scale(1.1);
     }
     .skill-icon {
       transition: all 0.3s ease;
+    }*/
+
+    .skill-category {
+    height: 250px; /* sets the box height */
+    transition: all 0.3s ease; /* smooth transition for hover */
+  }
+
+  .skill-category:hover .skill-icon {
+      transform: rotate(15deg) scale(1.1);
     }
+
   </style>
 </head>
 <body class="bg-white text-gray-900 font-sans">
